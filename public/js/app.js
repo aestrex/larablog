@@ -53852,7 +53852,7 @@ var Banner = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         "h1",
                         { className: "header center orange-text" },
-                        "Starter Template"
+                        "Our Latest Posts"
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         "div",
@@ -53860,16 +53860,7 @@ var Banner = function (_Component) {
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "h5",
                             { className: "header col s12 light" },
-                            "A modern responsive front-end framework based on Material Design"
-                        )
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "row center" },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "a",
-                            { href: "http://materializecss.com/getting-started.html", id: "download-button", className: "btn-large waves-effect waves-light orange" },
-                            "Get Started"
+                            "Fresh, Undiluted and up-to-date information and gists."
                         )
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null),
@@ -53882,8 +53873,92 @@ var Banner = function (_Component) {
     return Banner;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-var PostsDashboard = function (_Component2) {
-    _inherits(PostsDashboard, _Component2);
+var PostList = function (_Component2) {
+    _inherits(PostList, _Component2);
+
+    function PostList() {
+        _classCallCheck(this, PostList);
+
+        return _possibleConstructorReturn(this, (PostList.__proto__ || Object.getPrototypeOf(PostList)).apply(this, arguments));
+    }
+
+    _createClass(PostList, [{
+        key: "render",
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "div",
+                null,
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Post, null),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Post, null),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Post, null),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Post, null)
+            );
+        }
+    }]);
+
+    return PostList;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+var Post = function (_Component3) {
+    _inherits(Post, _Component3);
+
+    function Post() {
+        _classCallCheck(this, Post);
+
+        return _possibleConstructorReturn(this, (Post.__proto__ || Object.getPrototypeOf(Post)).apply(this, arguments));
+    }
+
+    _createClass(Post, [{
+        key: "render",
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "div",
+                { className: "col s12 m6" },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    "div",
+                    { className: "card horizontal" },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "div",
+                        { className: "card-image" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "http://placehold.it/100x253" })
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "div",
+                        { className: "card-stacked" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "div",
+                            { className: "card-content" },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "h2",
+                                null,
+                                "Horizontal Card"
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "p",
+                                null,
+                                "I am a very simple card. I am good at containing small bits of information."
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "div",
+                            { className: "card-action" },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "a",
+                                { href: "#" },
+                                "This is a link"
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Post;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+var PostsDashboard = function (_Component4) {
+    _inherits(PostsDashboard, _Component4);
 
     function PostsDashboard() {
         _classCallCheck(this, PostsDashboard);
@@ -53907,87 +53982,7 @@ var PostsDashboard = function (_Component2) {
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "div",
                             { className: "row" },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "div",
-                                { className: "col s12 m4" },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    "div",
-                                    { className: "icon-block" },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "h2",
-                                        { className: "center light-blue-text" },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            "i",
-                                            { className: "material-icons" },
-                                            "flash_on"
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "h5",
-                                        { className: "center" },
-                                        "Speeds up development"
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "p",
-                                        { className: "light" },
-                                        "We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers."
-                                    )
-                                )
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "div",
-                                { className: "col s12 m4" },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    "div",
-                                    { className: "icon-block" },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "h2",
-                                        { className: "center light-blue-text" },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            "i",
-                                            { className: "material-icons" },
-                                            "group"
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "h5",
-                                        { className: "center" },
-                                        "User Experience Focused"
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "p",
-                                        { className: "light" },
-                                        "By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience."
-                                    )
-                                )
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "div",
-                                { className: "col s12 m4" },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    "div",
-                                    { className: "icon-block" },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "h2",
-                                        { className: "center light-blue-text" },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            "i",
-                                            { className: "material-icons" },
-                                            "settings"
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "h5",
-                                        { className: "center" },
-                                        "Easy to work with"
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "p",
-                                        { className: "light" },
-                                        "We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize."
-                                    )
-                                )
-                            )
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(PostList, null)
                         )
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null),
