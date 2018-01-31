@@ -5,16 +5,25 @@ import Nav from './Nav';
 import Footer from './Footer';
 import PostsDashboard from './PostsDashboard';
 
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+  } from 'react-router-dom';
+
 export default class Main extends Component {
     render() {
         return (
-            <div>
-                <Nav />
+            <Router>
+                <div>
+                    <Nav />
 
-                <PostsDashboard />
+                    <Route exact path="/" component={PostsDashboard}/>
+                    {/* <Route path="/admin" component={AdminDashboard} /> */}
 
-                <Footer />
-            </div>
+                    <Footer />
+                </div>
+            </Router>
         );
     }
 }

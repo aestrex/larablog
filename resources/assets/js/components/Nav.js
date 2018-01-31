@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Nav extends Component {
     render() {
         return (
             <nav className="light-blue lighten-1" role="navigation">
-                <div className="nav-wrapper container"><a id="logo-container" href="#" className="brand-logo">Logo</a>
+                <div className="nav-wrapper container"><Link className="brand-logo" id="logo-container" to="/">Logo</Link>
                     <ul className="right hide-on-med-and-down">
-                        <li><a href="#">Navbar Link</a></li>
+                        <li><Link to="/admin">Dashboard</Link></li>
                     </ul>
 
                     <ul id="nav-mobile" className="side-nav">
-                        <li><a href="#">Navbar Link</a></li>
+                        <li><Link to="/admin">Dashboard</Link></li>
                     </ul>
                     <a href="#" data-activates="nav-mobile" className="button-collapse"><i className="material-icons">menu</i></a>
                 </div>
