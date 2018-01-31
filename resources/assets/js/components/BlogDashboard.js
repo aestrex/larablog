@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class Banner extends Component {
     render() {
@@ -14,18 +15,6 @@ class Banner extends Component {
                 <br /><br />
 
                 </div>
-            </div>
-        );
-    }
-}
-
-class PostList extends Component {
-    render() {
-        return (
-            <div>
-                {this.props.posts.map((post) => {
-                    return <Post key={post.id} post={post} />
-                })}
             </div>
         );
     }
@@ -46,7 +35,8 @@ class Post extends Component {
                             <p>{ this.truncate(this.props.post.body, 50) + " ..." }</p>
                         </div>
                         <div className="card-action">
-                            <a href="#">Read More</a>
+                            <Link to={"/posts/" + this.props.post.id}>Read More</Link>
+                            {/* <a href="#">Read More</a> */}
                         </div>
                     </div>
                 </div>
@@ -55,7 +45,19 @@ class Post extends Component {
     }
 }
 
-class PostsDashboard extends Component {
+class PostList extends Component {
+    render() {
+        return (
+            <div>
+                {this.props.posts.map((post) => {
+                    return <Post key={post.id} post={post} />
+                })}
+            </div>
+        );
+    }
+}
+
+class BlogDashboard extends Component {
     constructor(props) {
         super(props);
 
@@ -94,4 +96,4 @@ class PostsDashboard extends Component {
     }
 }
 
-export default PostsDashboard;
+export default BlogDashboard;

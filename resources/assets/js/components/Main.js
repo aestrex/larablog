@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import PostsDashboard from './PostsDashboard';
+import BlogDashboard from './BlogDashboard';
+import PostDashboard from './PostDashboard';
 
 import {
     BrowserRouter as Router,
@@ -49,7 +50,8 @@ export default class Main extends Component {
                 <div>
                     <Nav />
 
-                    <Route exact path="/" component={PostsDashboard}/>
+                    <Route exact path="/" component={BlogDashboard}/>
+                    <Route path="/posts/:postId" component={PostDashboard}/>
                     {/* <Route path="/admin" component={AdminDashboard} /> */}
 
                     <Footer />

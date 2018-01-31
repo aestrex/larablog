@@ -9,6 +9,28 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+        <style>
+            .eh {
+                height:1px;
+                overflow:hidden;
+                background-color:#e0e0e0;
+                margin: 0 5px 0 5px;
+            }
+
+            .blog-related {
+                margin-top:100px
+            }
+            
+            .blog-related h4 {
+                text-align:center;
+                margin-bottom:40px
+            }
+
+            .blog-related li {
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
 
