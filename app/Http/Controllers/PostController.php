@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Post;
 use App\Comment;
 use Illuminate\Http\Request;
@@ -16,7 +17,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return Post::all();
+        return DB::table('posts')->orderBy('created_at', 'desc')->get();
     }
 
     public function show($postId)

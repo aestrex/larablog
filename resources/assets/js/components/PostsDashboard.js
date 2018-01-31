@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Banner extends Component {
     render() {
@@ -22,30 +23,30 @@ class PostList extends Component {
     render() {
         return (
             <div>
-                <Post />
-                <Post />
-                <Post />
-                <Post />
+                {this.props.posts.map((post) => {
+                    return <Post key={post.id} post={post} />
+                })}
             </div>
         );
     }
 }
 
 class Post extends Component {
+    truncate(str, no_words) {
+        return str.split(" ").splice(0,no_words).join(" ");
+    }
+
     render() {
         return (
             <div className="col s12 m6">
                 <div className="card horizontal">
-                    <div className="card-image">
-                        <img src="http://placehold.it/100x253" />
-                    </div>
                     <div className="card-stacked">
                         <div className="card-content">
-                            <h2>Horizontal Card</h2>
-                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                            <h2>{this.props.post.title}</h2>
+                            <p>{ this.truncate(this.props.post.body, 50) + " ..." }</p>
                         </div>
                         <div className="card-action">
-                            <a href="#">This is a link</a>
+                            <a href="#">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -55,6 +56,26 @@ class Post extends Component {
 }
 
 class PostsDashboard extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            posts: []
+        };
+    }
+
+    componentDidMount() {
+        axios.get('/api/posts')
+            .then((response) => {
+                this.setState({
+                    posts: response.data
+                });
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
+
     render() {
         return (
             <div>
@@ -63,7 +84,7 @@ class PostsDashboard extends Component {
                 <div className="container">
                     <div className="section">
                         <div className="row">
-                            <PostList />
+                            <PostList posts={this.state.posts}/>
                         </div>
                     </div>
                     <br /><br />

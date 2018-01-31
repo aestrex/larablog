@@ -53786,6 +53786,8 @@ if (document.getElementById('root')) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -53793,6 +53795,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -53806,32 +53809,32 @@ var Banner = function (_Component) {
     }
 
     _createClass(Banner, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "div",
-                { className: "section no-pad-bot", id: "index-banner" },
+                'div',
+                { className: 'section no-pad-bot', id: 'index-banner' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "container" },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null),
+                    'div',
+                    { className: 'container' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "h1",
-                        { className: "header center orange-text" },
-                        "Our Latest Posts"
+                        'h1',
+                        { className: 'header center orange-text' },
+                        'Our Latest Posts'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "row center" },
+                        'div',
+                        { className: 'row center' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "h5",
-                            { className: "header col s12 light" },
-                            "Fresh, Undiluted and up-to-date information and gists."
+                            'h5',
+                            { className: 'header col s12 light' },
+                            'Fresh, Undiluted and up-to-date information and gists.'
                         )
                     ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null)
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null)
                 )
             );
         }
@@ -53850,15 +53853,14 @@ var PostList = function (_Component2) {
     }
 
     _createClass(PostList, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "div",
+                'div',
                 null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Post, null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Post, null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Post, null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Post, null)
+                this.props.posts.map(function (post) {
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Post, { key: post.id, post: post });
+                })
             );
         }
     }]);
@@ -53876,43 +53878,43 @@ var Post = function (_Component3) {
     }
 
     _createClass(Post, [{
-        key: "render",
+        key: 'truncate',
+        value: function truncate(str, no_words) {
+            return str.split(" ").splice(0, no_words).join(" ");
+        }
+    }, {
+        key: 'render',
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "div",
-                { className: "col s12 m6" },
+                'div',
+                { className: 'col s12 m6' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "card horizontal" },
+                    'div',
+                    { className: 'card horizontal' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "card-image" },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "http://placehold.it/100x253" })
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "card-stacked" },
+                        'div',
+                        { className: 'card-stacked' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "div",
-                            { className: "card-content" },
+                            'div',
+                            { className: 'card-content' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "h2",
+                                'h2',
                                 null,
-                                "Horizontal Card"
+                                this.props.post.title
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "p",
+                                'p',
                                 null,
-                                "I am a very simple card. I am good at containing small bits of information."
+                                this.truncate(this.props.post.body, 50) + " ..."
                             )
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "div",
-                            { className: "card-action" },
+                            'div',
+                            { className: 'card-action' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "a",
-                                { href: "#" },
-                                "This is a link"
+                                'a',
+                                { href: '#' },
+                                'Read More'
                             )
                         )
                     )
@@ -53927,33 +53929,51 @@ var Post = function (_Component3) {
 var PostsDashboard = function (_Component4) {
     _inherits(PostsDashboard, _Component4);
 
-    function PostsDashboard() {
+    function PostsDashboard(props) {
         _classCallCheck(this, PostsDashboard);
 
-        return _possibleConstructorReturn(this, (PostsDashboard.__proto__ || Object.getPrototypeOf(PostsDashboard)).apply(this, arguments));
+        var _this4 = _possibleConstructorReturn(this, (PostsDashboard.__proto__ || Object.getPrototypeOf(PostsDashboard)).call(this, props));
+
+        _this4.state = {
+            posts: []
+        };
+        return _this4;
     }
 
     _createClass(PostsDashboard, [{
-        key: "render",
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this5 = this;
+
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/posts').then(function (response) {
+                _this5.setState({
+                    posts: response.data
+                });
+            }).catch(function (error) {
+                console.error(error);
+            });
+        }
+    }, {
+        key: 'render',
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "div",
+                'div',
                 null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Banner, null),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "container" },
+                    'div',
+                    { className: 'container' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "section" },
+                        'div',
+                        { className: 'section' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "div",
-                            { className: "row" },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(PostList, null)
+                            'div',
+                            { className: 'row' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(PostList, { posts: this.state.posts })
                         )
                     ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null)
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null)
                 )
             );
         }
