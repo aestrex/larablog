@@ -25,7 +25,7 @@ class PostController extends Controller
         $post = Post::find($postId);
         if ($post) 
         {
-            $comments = Comment::where('post_id', $postId)->get();
+            $comments = Comment::where('post_id', $postId)->orderBy('created_at', 'desc')->get();
 
             return response()->json([
                 'found' => 1,

@@ -50,7 +50,7 @@ class CommentController extends Controller
             return response()->json([
                 'saved' => 1,
                 'post' => $post,
-                'comments' => Comment::where('post_id', $postId)->get()
+                'comments' => Comment::where('post_id', $postId)->orderBy('created_at', 'desc')->get()
             ]);
         }
 
