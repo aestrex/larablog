@@ -58505,6 +58505,9 @@ var CommentForm = function (_Component2) {
             e.preventDefault();
 
             this.props.onSubmit(this.state.text);
+            this.setState({
+                text: ''
+            });
         }
     }, {
         key: 'handleChange',
