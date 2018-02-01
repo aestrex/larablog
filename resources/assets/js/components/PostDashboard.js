@@ -25,6 +25,29 @@ class BlogPost extends Component {
 }
 
 class CommentForm extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            text: ''
+        }
+
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleFormSubmit(e) {
+        e.preventDefault();
+
+        this.props.onSubmit(this.state.text);
+    }
+
+    handleChange(e) {
+        this.setState({
+            text: e.target.value
+        });
+    }
+
     render() {
         return(
             <div>
@@ -32,14 +55,20 @@ class CommentForm extends Component {
                     <form className="col s12">
                         <div className="row">
                             <div className="input-field col s12">
-                                <textarea id="textarea1" className="materialize-textarea"></textarea>
+                                <textarea 
+                                    id="textarea1" 
+                                    className="materialize-textarea" 
+                                    onChange={this.handleChange}
+                                    value={this.state.text}></textarea>
                                 <label for="textarea1">Enter your comment</label>
                             </div>
+
+                            <button className="btn waves-effect waves-light" type="submit" name="action" onClick={this.handleFormSubmit}>Submit
+                                <i className="material-icons right">send</i>
+                            </button>
                         </div>
 
-                        <button className="btn waves-effect waves-light" type="submit" name="action">Submit
-                            <i className="material-icons right">send</i>
-                        </button>
+                        
                     </form>
                 </div>
             </div>
@@ -77,7 +106,7 @@ class CommentsDashboard extends Component {
                     <h4>Comments</h4>
 
                     <div className="container">
-                        <CommentForm />
+                        <CommentForm onSubmit={this.props.onCommentSubmit} />
 
                         <CommentList comments={this.props.comments} />
                     </div>
@@ -96,6 +125,23 @@ class PostDashboard extends Component {
             post: {},
             comments: []
         }
+
+        this.handleCommentSubmit = this.handleCommentSubmit.bind(this);
+    }
+
+    handleCommentSubmit(comment) {
+        axios.post(`/api/posts/${this.state.postId}/comments`, {
+            body: comment
+        }).then((response) => {
+            if (response.data.saved === 1) {
+                this.setState({
+                    post: response.data.post,
+                    comments: response.data.comments
+                });
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
     }
 
     componentDidMount() {
@@ -122,7 +168,7 @@ class PostDashboard extends Component {
             <div>
                 <BlogPost post={this.state.post} />
                 <div className="eh"></div>
-                <CommentsDashboard comments={this.state.comments} />
+                <CommentsDashboard comments={this.state.comments} onCommentSubmit={this.handleCommentSubmit} />
             </div>
         );
     }
