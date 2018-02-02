@@ -113,7 +113,8 @@ class PostController extends Controller
         if ($post->delete())
         {
             return response()->json([
-                'deleted' => 1
+                'deleted' => 1,
+                'posts' => DB::table('posts')->orderBy('created_at', 'desc')->get()
             ]);
         }
     }

@@ -86,7 +86,6 @@ class Comment extends Component {
         );
     }
 }
-
 class CommentList extends Component {
     render() {
         return (    
