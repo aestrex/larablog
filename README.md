@@ -1,5 +1,7 @@
 # larablog
 simple blog site
+laravel 5.5 for the backend
+react for the frontend
 
 ## Make sure you have php >= 7.0.1 installed on your machine ##
 
